@@ -44,7 +44,8 @@ ditilesContener.innerHTML = `
  ${word.meaning ? `<p class="py-4 font-bold">Meaning: ${word.meaning}</p>` : ''}
  ${word.partsOfSpeech ? `<p class="py-4 font-bold">Parts of Speech: ${word.partsOfSpeech}</p>` : ''}
  ${word.sentence ? `<p class="py-4 font-bold">Sentence: ${word.sentence}</p>` : ''}
- ${word.synonym ? `<p class="py-4">Synonym: ${word.synonym}</p>` : ''}
+ ${word.synonyms ? `<p class="flex font-bold mt-4">synonyms:    ${word.synonyms.join(", ")}</p>` : "<p class=\"flex justify-center mt-4\">No synonyms available</p>"}
+
  </div>`;
 document.getElementById("my_modal_5").showModal();
 

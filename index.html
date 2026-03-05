@@ -111,7 +111,7 @@
         <div id="level-container" class="flex flex-wrap justify-center gap-2"></div>
     </section>
 
-    <section id="word-container" class="bg-[#fffcf7] p-10 w-11/12 gap-5 mx-auto my-10 grid grid-cols-3">
+    <section id="word-container" class="bg-[#fffcf7] p-10 w-11/12 gap-5 mx-auto my-10 grid sm:grid-cols-1 md:grid-cols-3">
 
         <div class="bg-sky-100 text-center items-center justify-center col-span-full space-y-3">
          <p class="font-bangla ">আপনি এখনো কোন Lesson Select করেন ন</p>
@@ -130,6 +130,20 @@
             <p class="bg-[#fffcf7]">5. Do you offer certificates for completed courses?</p>
         </div> 
     </section>
+    <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    
+    <div id="ditiles-contener" class=""></div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
 
   
     

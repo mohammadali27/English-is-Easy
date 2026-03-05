@@ -3,13 +3,23 @@ const lodeData = () => {
     .then((res) => res.json())
     .then((json) => displeyLesons(json.data));
 };
+const manageSpinner = (isLoading) => {
+  
+  if (isLoading == true) {
+    document.getElementById("spinner").classList.remove("hidden");
+    document.getElementById("word-container").classList.add("hidden");
+  } else {
+    document.getElementById("spinner").classList.add("hidden");
+    document.getElementById("word-container").classList.remove("hidden");
+  }
+};
 const removeActiveClass =()=>{
   const allBtns=document.querySelectorAll(".all-Btn");
   allBtns.forEach(btn => btn.classList.remove("btn-active"));
   
 }
 const lodeLavelData =(id)=>{
-  
+  manageSpinner(true);
   const url =`https://openapi.programming-hero.com/api/level/${id}`;
   fetch(url)
   .then(res => res.json())
@@ -62,6 +72,7 @@ if (words.length==0) {
 
         </div>`;
   alert("No words found for this lesson.");
+  manageSpinner(false);
   return;
   
 }
@@ -91,6 +102,7 @@ words.forEach(word => {
   wordContainer.append(card);
   
 });
+ manageSpinner(false);  
  
 }
 displeyLesons = (lesons) => {
@@ -106,6 +118,7 @@ displeyLesons = (lesons) => {
     levelContainer.appendChild(btnDiv);
     
   }
+  
 };
 
 lodeData();
